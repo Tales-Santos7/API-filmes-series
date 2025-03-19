@@ -5,10 +5,9 @@ const SEARCH_URL = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=pt-BR&q
 const IMG_URL = "https://image.tmdb.org/t/p/w500/";
 
 let paginaAtual = 1;
-let carregando = false; // Para evitar requisições duplicadas
-let modoPesquisa = false; // Se estamos pesquisando ou não
+let carregando = false;
+let modoPesquisa = false;
 
-// 🔍 Função para buscar filmes populares (inicial)
 async function buscarFilmes() {
     if (carregando || modoPesquisa) return;
     carregando = true;
@@ -31,10 +30,8 @@ async function buscarFilmes() {
     carregando = false;
 }
 
-// 🔍 Função para buscar filmes conforme o usuário digita
 async function pesquisarFilmes(termo) {
     if (termo.length === 0) {
-        // Se o campo de pesquisa estiver vazio, volta para os filmes populares
         modoPesquisa = false;
         paginaAtual = 1;
         document.getElementById("resultados-pesquisa").innerHTML = "";
@@ -42,28 +39,28 @@ async function pesquisarFilmes(termo) {
         return;
     }
 
-    modoPesquisa = true; // Entramos no modo pesquisa
+    modoPesquisa = true;
 
     try {
         const resposta = await fetch(SEARCH_URL + encodeURIComponent(termo));
         const dados = await resposta.json();
 
-        mostrarFilmes(dados.results, true); // Mostra apenas os resultados da pesquisa
+        mostrarFilmes(dados.results, true);
     } catch (erro) {
         console.error("Erro ao pesquisar filmes:", erro);
     }
 }
 
-// 🎬 Exibir os filmes na tela
 function mostrarFilmes(filmes, limpar = false) {
     let section = document.getElementById("resultados-pesquisa");
 
     if (limpar) {
-        section.innerHTML = ""; // Limpa os resultados ao pesquisar
+        section.innerHTML = "";
     }
 
     filmes.forEach(filme => {
         let poster = filme.poster_path ? IMG_URL + filme.poster_path : "https://via.placeholder.com/500x400?text=Sem+Imagem";
+        let descricao = filme.overview && filme.overview.trim() !== "" ? filme.overview : "Nenhuma descrição disponível para este filme.";
 
         let resultado = `
             <div class="item-resultado">
@@ -71,7 +68,7 @@ function mostrarFilmes(filmes, limpar = false) {
                 <h2>
                     <a href="https://www.themoviedb.org/movie/${filme.id}" target="_blank">${filme.title}</a>
                 </h2>
-                <p class="descricao-meta">${filme.overview || "Descrição não disponível."}</p>
+                <p class="descricao-meta">${descricao}</p>
                 <a href="https://www.themoviedb.org/movie/${filme.id}" target="_blank">Mais informações</a>
             </div>
         `;
@@ -79,18 +76,15 @@ function mostrarFilmes(filmes, limpar = false) {
     });
 }
 
-// 📌 Detectar rolagem para carregar mais filmes
 function detectarRolagem() {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
         buscarFilmes();
     }
 }
 
-// 📝 Capturar digitação no campo de pesquisa
 document.getElementById("campo-pesquisa").addEventListener("input", (event) => {
     pesquisarFilmes(event.target.value);
 });
 
-// 🚀 Iniciar com os primeiros filmes e ativar a rolagem infinita
 buscarFilmes();
 window.addEventListener("scroll", detectarRolagem);
