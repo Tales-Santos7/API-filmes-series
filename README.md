@@ -1,45 +1,31 @@
-# API Filmes e Séries
+# API de Filmes
 
-Este projeto é uma aplicação web que permite pesquisar e visualizar informações sobre filmes e séries utilizando a API do The Movie Database (TMDb).
+Este projeto é uma aplicação web que permite pesquisar e visualizar informações sobre filmes utilizando a API do The Movie Database (TMDb).
 
-## 📌 Funcionalidades
+## Visão geral
 
-- Pesquisa de filmes e séries.
-- Exibição de pôsteres, descrições e links para mais informações.
-- Rolagem infinita para carregar mais filmes populares.
-- Layout responsivo para diferentes tamanhos de ecrã.
+### Captura do projeto
 
-## 🛠️ Tecnologias Utilizadas
+[<img src="./src/img/apiFilmesGIF.gif" alt="gif da dela inicial do projeto 'API de Filmes'">]
 
-- **HTML**: Estrutura da aplicação.
-- **CSS**: Estilização da interface.
-- **JavaScript**: Manipulação do DOM e consumo da API do TMDb.
+### Links
 
-## 📂 Estrutura do Projeto
+- URL do site ativo: [🛜Projeto ativo aqui💻](https://tales-santos7.github.io/API-filmes-series/)
 
-```
-API Filmes e Séries
-│── index.html
-│── src
-│   ├── css
-│   │   └── style.css
-│   ├── js
-│   │   ├── index.js
-│   │   ├── dados.js
-│   ├── img
-```
+## Sobre esse Projeto 
 
-## 🚀 Como Executar o Projeto
+✅ Pesquisa de filmes e séries.   
+✅ Exibição de pôsteres, descrições e links para mais informações.   
+✅ Rolagem infinita para carregar mais filmes populares.   
+✅ Layout responsivo para diferentes tamanhos de telas. 
 
-1. Clone o repositório:
-   ```sh
-   git clone https://github.com/seu-usuario/api-filmes-series.git
-   ```
-2. Acesse a pasta do projeto:
-   ```sh
-   cd api-filmes-series
-   ```
-3. Abra o `index.html` no navegador.
+### Construído com
+
+<div style="display: inline_block"><br>
+- HTML5<img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"><br><br>
+  - CSS <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"><br><br>
+  - JavaScript <img align="center" alt="JavaScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"><br><br>
+</div>
 
 ## 🔍 Como Funciona
 
@@ -48,16 +34,17 @@ API Filmes e Séries
 - A lista de resultados é atualizada dinamicamente com base na pesquisa.
 - O botão "Mais informações" leva à página do filme no TMDb.
 
-## 📜 Licença
+## 📜 API
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+Este projeto foi feito com a API do [TMDB](https://www.themoviedb.org/).
 
----
-Desenvolvido por Tales Santos 😊
+## Outros
 
 ### Minhas redes sociais!
 
 <div> 
-  <a href="https://instagram.com/tales.s7" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+   <a href="https://instagram.com/tales.s7" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
   <a href="https://www.linkedin.com/in/tales-santos7" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+   <a href = "mailto:tales.js07@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+   <a href="https://talessantos-mu.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/-Portf%C3%B3lio-Ffa500?style=for-the-badge&logo=portfolio&logoColor=white" target="_blank"></a>
 </div>
