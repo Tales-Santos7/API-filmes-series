@@ -6,7 +6,7 @@ Este projeto é uma aplicação web que permite pesquisar e visualizar informaç
 
 ### Captura do projeto
 
-[<img src="./src/img/apiFilmesGIF.gif" alt="gif da dela inicial do projeto 'API de Filmes'">]
+<img src="./src/img/apiFilmesGIF.gif" alt="gif da dela inicial do projeto 'API de Filmes'">
 
 ### Links
 
